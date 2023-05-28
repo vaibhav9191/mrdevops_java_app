@@ -1,9 +1,17 @@
 @Library('jenkins_shared_lib') _
 pipeline{
-        agent any 
+        agent any
+        parameters{
+            choice(name: 'Action', choices: 'create\ndelete', descriprion: 'choose create or Destroy')
+        } 
         stages{
 
             stage('Git Checkout'){
+                when{
+                    expression{
+                        params.Action == create
+                    }
+                }
                 steps{
                     script{
 
@@ -14,6 +22,13 @@ pipeline{
             }
            
             stage('Maven Unit Test'){
+
+                when{
+                    expression{
+                        params.Action == create
+                    }
+                }
+
                 steps{
                    
 
@@ -23,6 +38,12 @@ pipeline{
 
             }
             stage('Maven Intergation Test'){
+                when{
+                    expression{
+                        params.Action == create
+                    }
+                }
+                
                 steps{
                    
 
