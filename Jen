@@ -12,15 +12,7 @@ pipeline{
                 }
 
             }
-            stage('Maven Test'){
-                steps{
-                   
-
-                        mvnTestt()
-            
-                }
-
-            }
+           
             stage('Maven Unit Test'){
                 steps{
                    
