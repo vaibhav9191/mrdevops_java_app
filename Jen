@@ -1,4 +1,4 @@
-@Library('jenkin-shared-lib') _
+@Library('jenkins_shared_lib') _
 pipeline{
         agent any 
         stages{
@@ -7,7 +7,7 @@ pipeline{
                 steps{
                     script{
 
-                        gitcheckoutt()
+                        gitCheckoutt()
                     }
                 }
 
