@@ -57,10 +57,13 @@ pipeline{
                     expression{
                         params.Action == 'create'
                     }
-                    steps{
+                   
+                }
+
+                 steps{
+
                         staticCodeAnalysiss()
                     }
-                }
             }
             
 
