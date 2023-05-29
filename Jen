@@ -52,6 +52,16 @@ pipeline{
                 }
 
             }
+            stage('Static Code analysis'){
+                when{
+                    expression{
+                        params.Action == 'create'
+                    }
+                    steps{
+                        staticCodeAnalysiss()
+                    }
+                }
+            }
             
 
         }
