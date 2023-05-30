@@ -38,6 +38,24 @@ pipeline{
                 }
 
             }
+            stage('Maven Intergation Test'){
+
+                when{
+                    expression{
+                        params.Action == 'create'
+                    }
+                }
+
+                steps{
+                    script{
+                          mvnIntergationTestt()
+
+                    }
+                   
+            
+                }
+
+            }
             // stage('Maven Intergation Test'){
             //     when{
             //         expression{
