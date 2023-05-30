@@ -47,9 +47,12 @@ pipeline{
                 }
 
                 steps{
-                   
+                    script{
 
-                    mvnIntergationTestt()
+                        mvnIntergationTestt()
+
+                    }
+                   
             
                 }
 
@@ -63,7 +66,12 @@ pipeline{
                 }
                  steps{
 
-                    staticCodeAnalysiss()
+                    script{
+
+                        staticCodeAnalysiss()
+
+                    }
+
                     }
             }
             
