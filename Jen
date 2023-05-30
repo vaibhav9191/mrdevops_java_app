@@ -59,10 +59,9 @@ pipeline{
                     }
                    
                 }
-
                  steps{
 
-                        staticCodeAnalysiss()
+                    staticCodeAnalysiss()
                     }
             }
             
