@@ -30,9 +30,11 @@ pipeline{
                 }
 
                 steps{
-                   
+                    script{
+                          mvnTestt()
 
-                        mvnTestt()
+                    }
+                   
             
                 }
 
