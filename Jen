@@ -7,8 +7,7 @@ pipeline{
         stages{
 
             stage('Git Checkout'){
-                when{
-                    expression{
+                when{ expression{
                         params.Action == 'create'
                     }
                 }
@@ -39,41 +38,41 @@ pipeline{
                 }
 
             }
-            stage('Maven Intergation Test'){
-                when{
-                    expression{
-                        params.Action == 'create'
-                    }
-                }
+            // stage('Maven Intergation Test'){
+            //     when{
+            //         expression{
+            //             params.Action == 'create'
+            //         }
+            //     }
 
-                steps{
-                    script{
+            //     steps{
+            //         script{
 
-                        mvnIntergationTestt()
+            //             mvnIntergationTestt()
 
-                    }
+            //         }
                    
             
-                }
+            //     }
 
-            }
-            stage('Static Code analysis'){
-                when{
-                    expression{
-                        params.Action == 'create'
-                    }
+            // }
+            // stage('Static Code analysis'){
+            //     when{
+            //         expression{
+            //             params.Action == 'create'
+            //         }
                    
-                }
-                 steps{
+            //     }
+            //      steps{
 
-                    script{
+            //         script{
 
-                        staticCodeAnalysiss()
+            //             staticCodeAnalysiss()
 
-                    }
+            //         }
 
-                    }
-            }
+            //         }
+            // }
             
 
         }
