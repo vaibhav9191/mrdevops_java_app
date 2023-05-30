@@ -56,6 +56,24 @@ pipeline{
                 }
 
             }
+            stage('Static Code Analysis'){
+
+                when{
+                    expression{
+                        params.Action == 'create'
+                    }
+                }
+
+                steps{
+                    script{
+                          staticCodeAnalysiss()
+
+                    }
+                   
+            
+                }
+
+            }
             // stage('Maven Intergation Test'){
             //     when{
             //         expression{
