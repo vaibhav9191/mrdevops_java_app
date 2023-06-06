@@ -1,16 +1,19 @@
 @Library('jenkins_shared_lib') _
+
 pipeline{
+
         agent any
-        parameters{
-            choice(name: 'action', choices: 'create\ndelete', description: 'choose create or Destroy')
-        } 
+
+        // parameters{
+        //     choice(name: 'action', choices: 'create\ndelete', description: 'choose create or Destroy')
+        // } 
         stages{
 
             stage('Git Checkout'){
-                when{ expression{
-                        params.action == 'create'
-                    }
-                }
+                // when{ expression{
+                //         params.action == 'create'
+                //     }
+                // }
                 steps{
 
                 gitCheckoutt(
@@ -21,60 +24,60 @@ pipeline{
 
             }
            
-            stage('Maven Unit Test'){
+            // stage('Maven Unit Test'){
 
-                when{
-                    expression{
-                        params.action == 'create'
-                    }
-                }
+            //     // when{
+            //     //     expression{
+            //     //         params.action == 'create'
+            //     //     }
+            //     // }
 
-                steps{
-                    script{
-                          mvnTestt()
+            //     steps{
+            //         script{
+            //               mvnTestt()
 
-                    }
+            //         }
                    
             
-                }
+            //     }
 
-            }
-            stage('Maven Intergation Test'){
+            // }
+            // stage('Maven Intergation Test'){
 
-                when{
-                    expression{
-                        params.action == 'create'
-                    }
-                }
+            //     when{
+            //         expression{
+            //             params.action == 'create'
+            //         }
+            //     }
 
-                steps{
-                    script{
-                          mvnIntergationTestt()
+            //     steps{
+            //         script{
+            //               mvnIntergationTestt()
 
-                    }
+            //         }
                    
             
-                }
+            //     }
 
-            }
-            stage('Static Code Analysis'){
+            // }
+            // stage('Static Code Analysis'){
 
-                when{
-                    expression{
-                        params.action == 'create'
-                    }
-                }
+            //     when{
+            //         expression{
+            //             params.action == 'create'
+            //         }
+            //     }
 
-                steps{
-                    script{
-                          staticCodeAnalysiss()
+            //     steps{
+            //         script{
+            //               staticCodeAnalysiss()
 
-                    }
+            //         }
                    
             
-                }
+            //     }
 
-            }
+            // }
             // stage('Maven Intergation Test'){
             //     when{
             //         expression{
