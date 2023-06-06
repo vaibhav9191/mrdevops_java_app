@@ -2,21 +2,22 @@
 pipeline{
         agent any
         parameters{
-            choice(name: 'Action', choices: 'create\ndelete', description: 'choose create or Destroy')
+            choice(name: 'action', choices: 'create\ndelete', description: 'choose create or Destroy')
         } 
         stages{
 
             stage('Git Checkout'){
                 when{ expression{
-                        params.Action == 'create'
+                        params.action == 'create'
                     }
                 }
                 steps{
-                    script{
 
-                        gitCheckoutt()
+                gitCheckout(
+                branch: "main",
+                url: "https://github.com/vaibhav9191/mrdevops_java_app.git"
+            )
                     }
-                }
 
             }
            
@@ -24,7 +25,7 @@ pipeline{
 
                 when{
                     expression{
-                        params.Action == 'create'
+                        params.action == 'create'
                     }
                 }
 
@@ -42,7 +43,7 @@ pipeline{
 
                 when{
                     expression{
-                        params.Action == 'create'
+                        params.action == 'create'
                     }
                 }
 
@@ -60,7 +61,7 @@ pipeline{
 
                 when{
                     expression{
-                        params.Action == 'create'
+                        params.action == 'create'
                     }
                 }
 
