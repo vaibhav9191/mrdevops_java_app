@@ -30,10 +30,9 @@ pipeline{
                 // }
                 steps{
 
-                gitCheckoutt(
-                branch: "main",
-                url: "https://github.com/vaibhav9191/mrdevops_java_app.git"
-            )
+                script{
+                    mvnTest()
+                }
                     }
 
             }
