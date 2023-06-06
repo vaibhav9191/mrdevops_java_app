@@ -23,6 +23,20 @@ pipeline{
                     }
 
             }
+            stage('Maven Unit Testing'){
+                // when{ expression{
+                //         params.action == 'create'
+                //     }
+                // }
+                steps{
+
+                gitCheckoutt(
+                branch: "main",
+                url: "https://github.com/vaibhav9191/mrdevops_java_app.git"
+            )
+                    }
+
+            }
            
             // stage('Maven Unit Test'){
 
